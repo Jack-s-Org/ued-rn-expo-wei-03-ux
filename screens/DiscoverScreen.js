@@ -1,11 +1,95 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
+import SwipeableCarouselNormalHorizontal from "@/Components/SwipeableCarousel/SwipeableCarouselNormalHorizontal";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const DiscoverScreen = () => {
+const DiscoverScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Discover</Text>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <View style={{ flexDirection: "column", alignItems: "center" }}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginBottom: 40,
+            justifyContent: "center",
+          }}
+        >
+          <View>
+            <Pressable
+              onPress={() => {
+                navigation.replace("Main");
+              }}
+            >
+              {
+                <Image
+                  source={require("@/assets/Image/icon/back-btn.png")}
+                  contentFit="contain"
+                  style={{ height: 48, width: 54, marginRight: 40 }}
+                />
+              }
+            </Pressable>
+          </View>
+          <Text style={styles.titleText}>Discover</Text>
+          <View>
+            <Pressable>
+              {
+                <Image
+                  source={require("@/assets/Image/icon/Menu.png")}
+                  contentFit="contain"
+                  style={{ height: 50, width: 54 }}
+                />
+              }
+            </Pressable>
+          </View>
+        </View>
+        {/* bar selection */}
+        <View style={styles.barBg}>
+          <Pressable
+          // onPress={() => {
+          //   navigation.replace("BadgeCollection");
+          // }}
+          >
+            <Text style={styles.textBackground}>Aquatic Life</Text>
+          </Pressable>
+
+          <Pressable
+            onPress={() => {
+              navigation.replace("AquaticPlant");
+            }}
+          >
+            <Text style={styles.textBackground02}>Aquatic Plant</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => {
+              navigation.replace("Landscape");
+            }}
+          >
+            <Text style={styles.textBackground02}>Landscape</Text>
+          </Pressable>
+        </View>
+        {/* Profile Img */}
+        <View>
+          <Pressable
+            onPress={() => {
+              navigation.replace("TurtleDetail");
+            }}
+          >
+            {
+              <Image
+                source={require("@/assets/Image/MainProfile/turtle.png")}
+                contentFit="contain"
+                style={{ height: 400, width: 400 }}
+              />
+            }
+          </Pressable>
+        </View>
+        {/* name text  */}
+        <View style={{ flexDirection: "column", alignItems: "center" }}>
+          <Text style={styles.text01}>Hawksbill</Text>
+          <Text style={styles.text02}>Turtle</Text>
+        </View>
+      </View>
+    </View>
   );
 };
 
@@ -15,6 +99,56 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#272dfd",
+  },
+  titleText: {
+    fontSize: 24,
+    fontFamily: "idealista-bold",
+    fontWeight: "bold",
+    color: "#ede9de",
+    marginRight: 28,
+  },
+  barBg: {
+    backgroundColor: "#ede9de",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 40,
+    justifyContent: "space-evenly",
+    borderRadius: 50,
+    width: 396,
+    height: 48,
+  },
+  textBackground: {
+    fontSize: 16,
+    fontFamily: "idealista-bold",
+    fontWeight: "bold",
+    color: "#ede9de",
+    backgroundColor: "#d02462",
+    borderRadius: 8,
+    transform: [{ rotate: "-4deg" }],
+    padding: 12,
+  },
+  textBackground02: {
+    fontSize: 12,
+    fontFamily: "idealista-bold",
+    color: "#8e8c85",
+
+    borderRadius: 8,
+  },
+  text01: {
+    fontFamily: "idealista-bold",
+    fontSize: 40,
+    color: "#d02462",
+    backgroundColor: "#ede9de",
+    transform: [{ rotate: "-4deg" }],
+    padding: 10,
+  },
+  text02: {
+    fontFamily: "idealista-bold",
+    fontSize: 40,
+    color: "#ede9de",
+    backgroundColor: "#d02462",
+    padding: 10,
   },
 });
 
