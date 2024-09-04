@@ -5,8 +5,6 @@ import "./gesture-handler";
 import { Image, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-// import VideoPlayer from "./Components/VideoPlayer";
-
 const Icon = createIconSetFromIcoMoon(
   require("@/assets/icomoon/selection.json"),
   "IcoMoon",
@@ -34,6 +32,7 @@ export default function App() {
           />
         } */}
         {/* <VideoPlayer /> */}
+        {/* <SwipeableCarouselNormalHorizontal></SwipeableCarouselNormalHorizontal> */}
       </View>
     </SafeAreaProvider>
   );

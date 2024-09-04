@@ -14,6 +14,7 @@ const Gallery = ({ navigation }) => {
     <View style={styles.container}>
       <ScrollView
         style={styles.ScrollView}
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.align}
       >
         <View

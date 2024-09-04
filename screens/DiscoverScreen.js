@@ -68,7 +68,7 @@ const DiscoverScreen = ({ navigation }) => {
           </Pressable>
         </View>
         {/* Profile Img */}
-        <View>
+        {/* <View>
           <Pressable
             onPress={() => {
               navigation.replace("TurtleDetail");
@@ -82,12 +82,15 @@ const DiscoverScreen = ({ navigation }) => {
               />
             }
           </Pressable>
-        </View>
+        </View> */}
         {/* name text  */}
-        <View style={{ flexDirection: "column", alignItems: "center" }}>
+      </View>
+      <View style={{ width: "100%" }}>
+        <SwipeableCarouselNormalHorizontal></SwipeableCarouselNormalHorizontal>
+        {/* <View style={{ flexDirection: "column", alignItems: "center" }}>
           <Text style={styles.text01}>Hawksbill</Text>
           <Text style={styles.text02}>Turtle</Text>
-        </View>
+        </View> */}
       </View>
     </View>
   );

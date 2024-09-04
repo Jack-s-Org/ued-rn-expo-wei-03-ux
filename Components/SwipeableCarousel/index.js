@@ -1,3 +1,3 @@
-import SwipeableCarouselParallaxHorizontal from "./SwipeableCarouselParallaxHorizontal";
+import SwipeableCarouselNormalHorizontal from "./SwipeableCarouselNormalHorizontal";
 
-export default SwipeableCarouselParallaxHorizontal;
+export default SwipeableCarouselNormalHorizontal;

@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 
 const Dots = ({ data, currentIndex }) => {
   return (
@@ -10,17 +10,27 @@ const Dots = ({ data, currentIndex }) => {
         justifyContent: "center",
       }}
     >
-      {data.map((_, index) => (
-        <View
-          key={index}
-          style={{
-            height: 8,
-            width: 8,
-            marginRight: 8,
-            backgroundColor: index === currentIndex ? "#000" : "#dadada",
-          }}
-        />
-      ))}
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-around",
+          width: 64,
+        }}
+      >
+        {data.map((_, index) =>
+          index === currentIndex ? (
+            <Image
+              source={require("@/assets/Image/icon/p-01.png")}
+              style={{ height: 12, width: 24 }}
+            ></Image>
+          ) : (
+            <Image
+              source={require("@/assets/Image/icon/p-02.png")}
+              style={{ height: 12, width: 12 }}
+            ></Image>
+          )
+        )}
+      </View>
     </View>
   );
 };

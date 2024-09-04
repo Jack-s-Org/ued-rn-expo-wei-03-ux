@@ -121,55 +121,61 @@ const MeScreen = ({ navigation }) => {
               onPress={() => {
                 navigation.replace("BadgeCollection");
               }}
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
               <Text style={styles.seeAll}>See all</Text>
+              <Image
+                source={require("@/assets/Image/icon/seeAllArrow.png")}
+                contentFit="contain"
+                style={{ height: 24, width: 16 }}
+              />
             </Pressable>
           </View>
           {/* content */}
-          <View
-          // style={{
-          //   flexDirection: "row",
-          // }}
+
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{
+              display: "flex",
+              flexDirection: "row",
+              paddingLeft: 12,
+              marginBottom: 12,
+            }}
           >
-            <ScrollView
-              horizontal={true}
-              contentContainerStyle={{
-                display: "flex",
-                flexDirection: "row",
-                paddingLeft: 12,
-                marginBottom: 12,
-              }}
-            >
-              {
-                <Image
-                  source={require("@/assets/Image/Badges/turtleMaster.png")}
-                  contentFit="contain"
-                  style={styles.badge}
-                />
-              }
-              {
-                <Image
-                  source={require("@/assets/Image/Badges/SharkSpotter.png")}
-                  contentFit="contain"
-                  style={styles.badge}
-                />
-              }
-              {
-                <Image
-                  source={require("@/assets/Image/Badges/nemo.png")}
-                  contentFit="contain"
-                  style={styles.badge}
-                />
-              }
-              {
-                <Image
-                  source={require("@/assets/Image/Badges/mantaBadge.png")}
-                  contentFit="contain"
-                  style={styles.badge}
-                />
-              }
-            </ScrollView>
-          </View>
+            {
+              <Image
+                source={require("@/assets/Image/Badges/turtleMaster.png")}
+                contentFit="contain"
+                style={styles.badge}
+              />
+            }
+            {
+              <Image
+                source={require("@/assets/Image/Badges/SharkSpotter.png")}
+                contentFit="contain"
+                style={styles.badge}
+              />
+            }
+            {
+              <Image
+                source={require("@/assets/Image/Badges/nemo.png")}
+                contentFit="contain"
+                style={styles.badge}
+              />
+            }
+            {
+              <Image
+                source={require("@/assets/Image/Badges/mantaBadge.png")}
+                contentFit="contain"
+                style={styles.badge}
+              />
+            }
+          </ScrollView>
 
           {/* photoGallerySection */}
           <View
@@ -190,20 +196,27 @@ const MeScreen = ({ navigation }) => {
             }
             <Text style={styles.sectionText}>Photo Gallery </Text>
             <Pressable
-            // onPress={() => {
-            //   navigation.replace("BadgeCollection");
-            // }}
+              // onPress={() => {
+              //   navigation.replace("BadgeCollection");
+              // }}
+              style={{ flexDirection: "row", alignItems: "center" }}
             >
               <Text style={styles.seeAll}>See all</Text>
+              <Image
+                source={require("@/assets/Image/icon/seeAllArrow.png")}
+                contentFit="contain"
+                style={{ height: 24, width: 16 }}
+              />
             </Pressable>
           </View>
           {/* photos */}
           <ScrollView
-            horizontal="true"
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
             contentContainerStyle={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-around",
+              justifyContent: "space-between",
               paddingLeft: 28,
             }}
           >
@@ -305,12 +318,14 @@ const styles = StyleSheet.create({
     color: "#B2AFA7",
     fontFamily: "idealista-SemiBold",
     fontSize: 14,
+    marginRight: 4,
   },
   bgImg: {
     flex: 1,
     justifyContent: "center",
     width: "100%",
     height: "100%",
+    paddingBottom: 40,
   },
 });
 
