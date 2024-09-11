@@ -6,7 +6,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import HomeScreen from "./HomeScreen";
 import NotificationsScreen from "./NotificationsScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 import MeScreen from "./MeScreen";
 import DiscoverScreen from "./DiscoverScreen";
 import AppDrawer from "./AppDrawer";

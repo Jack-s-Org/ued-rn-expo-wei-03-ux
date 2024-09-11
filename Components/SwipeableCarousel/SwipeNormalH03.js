@@ -9,7 +9,6 @@ import {
   Image,
   Text,
   StyleSheet,
-  Pressable,
 } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
 import Dots from "./Dots";
@@ -37,40 +36,26 @@ const styles = StyleSheet.create({
 
 const data = [
   <View style={{ alignItems: "center" }}>
-    <Pressable>
-      <Image
-        source={require("@/assets/Image/MainProfile/turtle.png")}
-        contentFit="contain"
-        style={{ height: 400, width: 400 }}
-      />
-    </Pressable>
-
-    <Text style={styles.text01}>Hawksbill</Text>
-    <Text style={styles.text02}>Turtle</Text>
-  </View>,
-  <View style={{ alignItems: "center" }}>
     <Image
-      source={require("@/assets/Image/MainProfile/manta.png")}
+      source={require("@/assets/Image/MainProfile/lrt.png")}
       contentFit="contain"
       style={{ height: 400, width: 400 }}
     />
-    <Text style={styles.text01}>Manta</Text>
-    <Text style={styles.text02}>Ray</Text>
+    <Text style={styles.text01}>LRT</Text>
+    <Text style={styles.text02}>Coral Reef</Text>
   </View>,
   <View style={{ alignItems: "center" }}>
     <Image
-      source={require("@/assets/Image/MainProfile/octopus.png")}
+      source={require("@/assets/Image/MainProfile/tank.png")}
       contentFit="contain"
       style={{ height: 400, width: 400 }}
     />
-    <Text style={styles.text01}>Blue-ringed</Text>
-    <Text style={styles.text02}>Octopus</Text>
+    <Text style={styles.text01}>Hurghada</Text>
+    <Text style={styles.text02}>Sunk Tank</Text>
   </View>,
-  // <Slide index={1} backgroundColor="orange" />,
-  // <Slide index={2} backgroundColor="yellow" />,
 ];
 
-function SwipeableCarouselNormalHorizontal() {
+function SwipeNormalH03() {
   const windowWidth = useWindowDimensions().width;
   const scrollOffsetValue = useSharedValue(0);
 
@@ -115,4 +100,4 @@ function SwipeableCarouselNormalHorizontal() {
   );
 }
 
-export default SwipeableCarouselNormalHorizontal;
+export default SwipeNormalH03;

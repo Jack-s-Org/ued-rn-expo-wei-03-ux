@@ -6,8 +6,8 @@ import {
   Pressable,
   ImageBackground,
 } from "react-native";
-import { RotateInUpRight } from "react-native-reanimated";
-import { SafeAreaView } from "react-native-safe-area-context";
+// import { RotateInUpRight } from "react-native-reanimated";
+// import { SafeAreaView } from "react-native-safe-area-context";
 const image = require("@/assets/Image/badge-bg.png");
 
 const TurtleBadge = ({ navigation }) => {

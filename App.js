@@ -3,7 +3,7 @@ import createIconSetFromIcoMoon from "@expo/vector-icons/createIconSetFromIcoMoo
 import RootNavigator from "./screens/RootNavigator";
 import "./gesture-handler";
 import { Image, View } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Icon = createIconSetFromIcoMoon(
   require("@/assets/icomoon/selection.json"),
@@ -15,6 +15,8 @@ export default function App() {
     "idealista-bold": require("@/assets/fonts/Idealista-Bold.ttf"),
     "idealista-medium": require("@/assets/fonts/IdealistaMedium.ttf"),
     "idealista-SemiBold": require("@/assets/fonts/IdealistaSemiBold.ttf"),
+    "Signika-Bold": require("@/assets/fonts/Signika-Bold.ttf"),
+    "Signika-Medium": require("@/assets/fonts/Signika-Medium.ttf"),
   });
 
   if (!fontsLoaded) {

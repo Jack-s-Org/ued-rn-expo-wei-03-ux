@@ -1,72 +1,69 @@
-import { StyleSheet, Text, View, Pressable, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Image,
+  ImageBackground,
+} from "react-native";
+import SwipeNormalH02 from "@/Components/SwipeableCarousel/SwipeNormalH02";
+const image = require("@/assets/Image/bg-vector.png");
 const AquaticPlant = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "column", alignItems: "center" }}>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginBottom: 40,
-            justifyContent: "center",
-          }}
-        >
-          <Text style={styles.titleText}>Discover</Text>
-          <View>
-            <Pressable>
-              {
-                <Image
-                  source={require("@/assets/Image/icon/Menu.png")}
-                  contentFit="contain"
-                  style={{ height: 50, width: 54 }}
-                />
-              }
+      <ImageBackground source={image} resizeMode="cover" style={styles.bgImg}>
+        <View style={{ flexDirection: "column", alignItems: "center" }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 40,
+              justifyContent: "center",
+            }}
+          >
+            <Text style={styles.titleText}>Discover</Text>
+            <View>
+              <Pressable>
+                {
+                  <Image
+                    source={require("@/assets/Image/icon/Menu.png")}
+                    contentFit="contain"
+                    style={{ height: 50, width: 54 }}
+                  />
+                }
+              </Pressable>
+            </View>
+          </View>
+          {/* bar selection */}
+          <View style={styles.barBg}>
+            <Pressable
+              onPress={() => {
+                navigation.replace("DiscoverScreen");
+              }}
+            >
+              <Text style={styles.textBackground02}>Aquatic Life</Text>
+            </Pressable>
+
+            <Pressable
+            //   onPress={() => {
+            //     navigation.replace("Gallery");
+            //   }}
+            >
+              <Text style={styles.textBackground}>Aquatic Plant</Text>
+            </Pressable>
+            <Pressable
+              onPress={() => {
+                navigation.replace("Landscape");
+              }}
+            >
+              <Text style={styles.textBackground02}>Landscape</Text>
             </Pressable>
           </View>
         </View>
-        {/* bar selection */}
-        <View style={styles.barBg}>
-          <Pressable
-            onPress={() => {
-              navigation.replace("DiscoverScreen");
-            }}
-          >
-            <Text style={styles.textBackground02}>Aquatic Life</Text>
-          </Pressable>
-
-          <Pressable
-          //   onPress={() => {
-          //     navigation.replace("Gallery");
-          //   }}
-          >
-            <Text style={styles.textBackground}>Aquatic Plant</Text>
-          </Pressable>
-          <Pressable
-            onPress={() => {
-              navigation.replace("Landscape");
-            }}
-          >
-            <Text style={styles.textBackground02}>Landscape</Text>
-          </Pressable>
-        </View>
-        {/* Profile Img */}
         <View>
-          {
-            <Image
-              source={require("@/assets/Image/MainProfile/staghorn.png")}
-              contentFit="contain"
-              style={{ height: 400, width: 400 }}
-            />
-          }
+          <SwipeNormalH02></SwipeNormalH02>
         </View>
-        {/* name text  */}
-        <View style={{ flexDirection: "column", alignItems: "center" }}>
-          <Text style={styles.text01}>Staghorn</Text>
-          <Text style={styles.text02}>Coral</Text>
-        </View>
-      </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -113,20 +110,11 @@ const styles = StyleSheet.create({
 
     borderRadius: 8,
   },
-  text01: {
-    fontFamily: "idealista-bold",
-    fontSize: 40,
-    color: "#d02462",
-    backgroundColor: "#ede9de",
-    transform: [{ rotate: "-4deg" }],
-    padding: 10,
-  },
-  text02: {
-    fontFamily: "idealista-bold",
-    fontSize: 40,
-    color: "#ede9de",
-    backgroundColor: "#d02462",
-    padding: 10,
+  bgImg: {
+    flex: 1,
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
   },
 });
 
