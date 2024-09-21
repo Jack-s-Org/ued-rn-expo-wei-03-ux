@@ -105,6 +105,7 @@ const BadgeCollection = ({ navigation }) => {
               onPress={() => {
                 navigation.replace("TurtleBadge");
               }}
+              options={{ animation: "fade_from_bottom" }}
             >
               {
                 <Image

@@ -95,6 +95,12 @@ const SignInScreen = ({ navigation }) => {
             onPress={() => {
               navigation.replace("Main");
             }}
+            style={{
+              backgroundColor: "#d02462",
+              borderRadius: 200,
+              alignItems: "center",
+              width: 240,
+            }}
           >
             <Text style={styles.text}>Complete</Text>
           </Pressable>
@@ -116,9 +122,9 @@ const styles = StyleSheet.create({
     fontFamily: "idealista-bold",
     color: "#ede9de",
     fontSize: 16,
-    backgroundColor: "#d02462",
-    width: 240,
-    padding: 10,
+    // backgroundColor: "#d02462",
+    width: 120,
+    padding: 16,
   },
   bgImg: {
     flex: 1,

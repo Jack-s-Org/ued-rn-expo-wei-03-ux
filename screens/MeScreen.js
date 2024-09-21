@@ -15,7 +15,7 @@ const MeScreen = ({ navigation }) => {
   return (
     <ScrollView style={styles.ScrollView} contentContainerStyle={styles.align}>
       <ImageBackground source={image} resizeMode="cover" style={styles.bgImg}>
-        <View style={{ alignItems: "center", height: "100%" }}>
+        <View style={{ alignItems: "center" }}>
           {/* back btn */}
           <View style={{ marginTop: 40 }}>
             <Pressable
@@ -75,8 +75,12 @@ const MeScreen = ({ navigation }) => {
                 justifyContent: "space-evenly",
               }}
             >
-              <Text style={styles.tag}>Open Water Diver</Text>
-              <Text style={styles.tag}>Photographer</Text>
+              <View style={{ borderRadius: 50, backgroundColor: "#0e1059" }}>
+                <Text style={styles.tag}>Open Water Diver</Text>
+              </View>
+              <View style={{ borderRadius: 50, backgroundColor: "#0e1059" }}>
+                <Text style={styles.tag}>Photographer</Text>
+              </View>
             </View>
             <View>
               <Pressable>
@@ -299,9 +303,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: "idealista-bold",
     color: "#ede9de",
-    backgroundColor: "#0e1059",
+    // backgroundColor: "#0e1059",
     margin: 16,
-    padding: 10,
+    padding: 2,
     borderCurve: "circular",
   },
   photoSize: {
@@ -325,7 +329,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     height: "100%",
-    paddingBottom: 40,
+    marginBottom: 40,
   },
 });
 

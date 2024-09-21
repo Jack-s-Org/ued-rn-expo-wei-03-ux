@@ -13,6 +13,7 @@ const Satang = require("@/assets/Image/diveLocation/Satang.png");
 const Tioman = require("@/assets/Image/diveLocation/Tioman.png");
 const Perhentian = require("@/assets/Image/diveLocation/Perhentian.png");
 const vector = require("@/assets/Image/diveLocation/Vector.png");
+const InstaBG = require("@/assets/Image/IG-bg.png");
 const HomeScreen = ({ navigation }) => {
   return (
     <ScrollView style={styles.ScrollView}>
@@ -315,11 +316,39 @@ const HomeScreen = ({ navigation }) => {
             </ImageBackground>
           </ScrollView>
         </View>
-        <View style={{ alignItems: "center", marginTop: 48 }}>
-          <Image
-            source={require("@/assets/Image/IG.png")}
-            style={{ width: 400, height: 320 }}
-          ></Image>
+        <View style={{ alignItems: "center", marginBottom: 40 }}>
+          <ImageBackground source={InstaBG} style={{ width: 400, height: 320 }}>
+            <View
+              style={{
+                backgroundColor: "#121472",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: 24,
+                marginTop: 200,
+                borderBottomLeftRadius: 40,
+                borderBottomRightRadius: 40,
+              }}
+            >
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Image
+                  source={require("@/assets/Image/icon/Instagram.png")}
+                  style={{ width: 32, height: 32, marginRight: 8 }}
+                />
+                <Text style={styles.Join}>Join us on Instagram</Text>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Text style={{ fontSize: 32, marginRight: 8 }}>🌏</Text>
+                <Text style={styles.cta02}>Seek Adventure</Text>
+                <Text style={{ fontSize: 32, marginRight: 8 }}>🐟</Text>
+                <Text style={styles.cta02}>Save the Ocean</Text>
+              </View>
+              <View>
+                <Text style={styles.cta02}>
+                  Tag #PADI to get a chance to be featured
+                </Text>
+              </View>
+            </View>
+          </ImageBackground>
         </View>
       </ImageBackground>
     </ScrollView>
@@ -349,6 +378,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     height: "100%",
+    marginBottom: 60,
   },
   titleText: {
     fontFamily: "idealista-bold",
@@ -407,6 +437,16 @@ const styles = StyleSheet.create({
   smallText: {
     fontFamily: "idealista-bold",
     fontSize: 12,
+    color: "#ede9de",
+  },
+  Join: {
+    fontFamily: "idealista-bold",
+    fontSize: 24,
+    color: "#ede9de",
+  },
+  cta02: {
+    fontFamily: "idealista-bold",
+    fontSize: 14,
     color: "#ede9de",
   },
 });

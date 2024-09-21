@@ -1,17 +1,19 @@
 import { useState } from "react";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Entypo from "@expo/vector-icons/Entypo";
-
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import HomeScreen from "./HomeScreen";
 import NotificationsScreen from "./NotificationsScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import Octicons from "@expo/vector-icons/Octicons";
 import MeScreen from "./MeScreen";
 import DiscoverScreen from "./DiscoverScreen";
 import AppDrawer from "./AppDrawer";
 import SettingsScreen from "./SettingsScreen";
 import AddScreen from "./AddScreen";
+import CustomTabBar from "@/Components/CustomTabBar";
 
 const MainStacks = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -19,10 +21,11 @@ const Tab = createBottomTabNavigator();
 const Empty = () => null;
 
 const MainTabs = ({ navigation }) => {
-  const [unreadCount, setUnreadCount] = useState(3);
+  // const [unreadCount, setUnreadCount] = useState(3);
   return (
     <AppDrawer navigation={navigation}>
       <Tab.Navigator
+        tabBar={(props) => <CustomTabBar {...props} />}
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: "#272dfd",
@@ -33,9 +36,9 @@ const MainTabs = ({ navigation }) => {
           component={HomeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Entypo name="air" size={size} color={color} />
+              <Octicons name="home" size={28} color={color} />
             ),
-            tabBarLabel: "Home",
+            tabBarLabel: () => null,
           }}
         />
 
@@ -44,9 +47,9 @@ const MainTabs = ({ navigation }) => {
           component={DiscoverScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="search" size={size} color={color} />
+              <Ionicons name="search" size={28} color={color} />
             ),
-            tabBarLabel: "Discover",
+            tabBarLabel: () => null,
           }}
         />
 
@@ -55,7 +58,7 @@ const MainTabs = ({ navigation }) => {
           component={Empty} // this is a workaround to show a full screen when this tab is pressed
           options={{
             tabBarIcon: ({ color }) => (
-              <Ionicons name="add" size={36} color={color} />
+              <Octicons name="people" size={28} color={color} />
             ),
             tabBarLabel: () => null,
           }}
@@ -72,16 +75,20 @@ const MainTabs = ({ navigation }) => {
           component={NotificationsScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="chatbox" size={size} color={color} />
+              <MaterialCommunityIcons
+                name="map-search-outline"
+                size={28}
+                color={color}
+              />
             ),
-            tabBarLabel: "Inbox",
-            tabBarBadge: unreadCount,
+            tabBarLabel: () => null,
+            // tabBarBadge: unreadCount,
           }}
-          listeners={{
-            tabPress: () => {
-              setUnreadCount(null);
-            },
-          }}
+          // listeners={{
+          //   tabPress: () => {
+          //     setUnreadCount(null);
+          //   },
+          // }}
         />
 
         <Tab.Screen
@@ -89,9 +96,9 @@ const MainTabs = ({ navigation }) => {
           component={MeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="person" size={size} color={color} />
+              <Octicons name="person" size={28} color={color} />
             ),
-            tabBarLabel: "Me",
+            tabBarLabel: () => null,
           }}
         />
       </Tab.Navigator>
